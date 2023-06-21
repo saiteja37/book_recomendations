@@ -4,10 +4,10 @@ import numpy as np
 import pandas as pd;
 
 app = Flask(__name__)
-df=pd.read_pickle("book.pkl","rb")
-pt=pd.read_pickle("pt.pkl","rb")
-sim=pd.read_pickle("sim.pkl","rb")
-book=pd.read_pickle("books.pkl","rb")
+df=pd.read_pickle("book.pkl")
+pt=pd.read_pickle("pt.pkl")
+sim=pd.read_pickle("sim.pkl")
+book=pd.read_pickle("books.pkl")
 @app.route('/')
 def index():
     return  render_template("index.html",
