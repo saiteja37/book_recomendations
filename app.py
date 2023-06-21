@@ -1,12 +1,13 @@
 from flask import Flask,render_template,request
 import pickle
 import numpy as np
+import pandas as pd;
 
 app = Flask(__name__)
-df=pickle.load(open("book.pkl","rb"))
-pt=pickle.load(open("pt.pkl","rb"))
-sim=pickle.load(open("sim.pkl","rb"))
-book=pickle.load((open("books.pkl","rb")))
+df=pd.read_pickle("book.pkl","rb")
+pt=pd.read_pickle("pt.pkl","rb")
+sim=pd.read_pickle("sim.pkl","rb")
+book=pd.read_pickle("books.pkl","rb")
 @app.route('/')
 def index():
     return  render_template("index.html",
